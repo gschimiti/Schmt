@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <head>
+      <meta charset="utf-8"/>
+      <title>schmt.me - Material Icons Cheatsheet</title>
+      <link type="text/css" rel="stylesheet" href="../../assets/css/schmt.css"  media="screen,projection"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+  </head>
+
+  <body class="wrapper">
+    <div class="page-header">
+      <h1 class="page-header-title">Material Icons Cheatsheet</h1>
+
+      <p class="page-header-description">Supports the latest releases of all major
+        browsers and platforms. Copy and paste material icons for Photoshop,
+        Illustrator, Adobe XD, Figma and more.</p>
+    </div>
+
+    <main id="icons-list" class="page-content"></main>
+
+    <script type="text/javascript" src="../../assets/json/material-icons.json"></script>
+    <script>
+      function copyToClipboard(content) {
+        let textArea = document.createElement('textarea');
+
+        document.body.appendChild(textArea);
+
+        textArea.value = content;
+        textArea.select();
+
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+      }
+
+      function insertCategories(JSONData, callback) {
+        let element = document.getElementById('icons-list');
+
+        for (let key in JSONData) {
+          let newElement = document.createElement('section');
+
+          newElement.innerHTML = '\
+            <h3 class="section-header">' + key + '</h3> \
+            <div class="section-body"> \
+              <div id="' + key + '-list" class="row icons-list"> \
+              </div> \
+            </div>';
+
+          element.appendChild(newElement);
+
+          insertIcons(JSONData, key);
+        }
+      }
+
+      function insertIcons(JSONData, category) {
+        let htmlString = '';
+        let element = document.getElementById(category + '-list');
+
+        JSONData[category].forEach(function(item, index) {
+          htmlString += '\
+            <div class="card icons-list-card" title="Copiar ' + item + '"> \
+              <div class="icons-list-card-thumbnail"> \
+                <i class="material-icons icons-list-card-icon">' + item + '</i> \
+              </div> \
+              <span class="label icons-list-card-label">' + item + '</span> \
+            </div>';
+        });
+
+        element.innerHTML = htmlString;
+      }
+
+      const JSONData = JSON.parse(materialIcons);
+
+      insertCategories(JSONData[0], insertIcons);
+
+      let iconsCards = document.getElementsByClassName('icons-list-card');
+
+      document.addEventListener('click', function(e) {
+        if(e.target.className.includes("icons-list-card")) {
+          let iconName = e.target.innerText.split('\n', 1)[0];
+
+          copyToClipboard(iconName);
+        }
+      })
+    </script>
+  </body>
+</html>

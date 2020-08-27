@@ -8,6 +8,13 @@
   src: url('../fonts/Inter/static/Inter-Medium.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/material/Material-Icons.woff2') format('woff2');
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -26,8 +33,43 @@ body {
   font-family: 'Inter Regular'
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  color: rgba(0, 0, 0, .8);
+  font-family: 'Inter Medium';
+}
+
+h1 {
+  font-size: 2.75rem;
+}
+
+h3 {
+  font-size: 1.625rem;
+}
+
+p {
+  max-width: 33.75rem;
+  color: rgba(0, 0, 0, .56);
+  line-height: 150%;
+  font-family: 'Inter Regular';
+  font-size: 1rem;
+}
+
 .wrapper {
   padding: 3rem 2rem 0 2rem;
+}
+
+.page-header {
+  margin-bottom: 3.5rem;
+}
+
+.page-header-title {
+  margin-bottom: 2rem;
 }
 
 .empty-state-container {
@@ -54,13 +96,14 @@ body {
 
 .section-header {
   margin-bottom: 1rem;
-  color: #333333;
-  font-family: 'Inter Medium';
+}
+
+.section-header:first-letter {
+  text-transform: capitalize;
 }
 
 .section-body {
   margin-bottom: 1.5rem;
-  font-family: 'Inter Regular'
 }
 
 .section-body p {
@@ -70,4 +113,148 @@ body {
 .list {
   padding-left: 2rem;
   margin-bottom: 1rem;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 100%;
+  padding: 1rem 1.25rem 1rem 1rem;
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, .56);
+  cursor: pointer;
+}
+
+.card:hover {
+  background-color: rgba(0, 0, 0, .06);
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, .56);
+}
+
+.card:active {
+  background-color: rgba(0, 0, 0, .12);
+  box-shadow: none;
+}
+
+.card:hover .label {
+  font-family: 'Inter Medium';
+}
+
+.icons-list {
+  margin-bottom: 5rem;
+}
+
+.icons-list-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-self: flex-start;
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.icons-list-card-thumbnail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  width: 48px;
+  border-radius: 8px;
+}
+
+.icons-list-card-icon {
+  color: rgba(0, 0, 0, .8);
+  font-size: 2.25rem;
+}
+
+.icons-list-card-label {
+  margin-left: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.label {
+  color: rgba(0, 0, 0, .8);
+}
+
+.material-icons {
+  direction: ltr;
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  white-space: nowrap;
+  word-wrap: normal;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'liga';
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1023px) {
+  .icons-list-card {
+    width: calc(50% - 1rem);
+    margin: 1rem;
+  }
+
+  .icons-list-card:nth-child(2n) {
+    margin-right: 0;
+  }
+
+  .icons-list-card:nth-child(2n+1) {
+    margin-left: 0;
+  }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1439px) {
+  .icons-list-card {
+    width: calc(25% - 1.5rem);
+    margin: 1rem;
+  }
+
+  .icons-list-card:nth-child(4n) {
+    margin-right: 0;
+  }
+
+  .icons-list-card:nth-child(4n+1) {
+    margin-left: 0;
+  }
+}
+
+@media only screen and (min-width: 1440px) and (max-width: 1919px) {
+  .icons-list-card {
+    width: calc(16.666666% - 1.666666rem);
+    margin: 1rem;
+  }
+
+  .icons-list-card:nth-child(6n) {
+    margin-right: 0;
+  }
+
+  .icons-list-card:nth-child(6n+1) {
+    margin-left: 0;
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  .icons-list-card {
+    width: calc(12.5% - 1.75rem);
+    margin: 1rem;
+  }
+
+  .icons-list-card:nth-child(8n) {
+    margin-right: 0;
+  }
+
+  .icons-list-card:nth-child(8n+1) {
+    margin-left: 0;
+  }
 }
