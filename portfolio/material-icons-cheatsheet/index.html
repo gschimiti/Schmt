@@ -19,7 +19,7 @@
 
     <main class="page-content">
       <div class="icons-list-search">
-        <label for="icons-list-search-input" class="icons-list-search-label">Icon Name <span class="icons-list-search-hint">Enter a text to filter icons by name</span></label>
+        <label for="icons-list-search-input" class="icons-list-search-label">Icon Name <span class="icons-list-search-hint">Enter some text to filter icons by name</span></label>
         <input id="icons-list-search-input" class="icons-list-search-input" type="search"/>
       </div>
 
@@ -58,7 +58,7 @@
         if (icons) {
           iconsListSummary.textContent = 'Showing ' + icons + stringPlurarize(icons, ' icon', 's', 0) + ' in ' + categories + stringPlurarize(categories, ' category', 'ies', -1);
         } else {
-          iconsListSummary.textContent = 'Showing no icons';
+          iconsListSummary.textContent = 'No icons found';
         }
       }
 

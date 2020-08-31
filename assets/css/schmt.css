@@ -60,6 +60,22 @@ p {
   font-size: 1rem;
 }
 
+input {
+  height: 2.5rem;
+  width: 100%;
+  padding: 0 .5rem;
+  border: .0625rem solid rgba(0, 0, 0, .32);
+  border-radius: .5rem;
+  color: rgba(0,0,0,.56);
+  font-family: 'Inter Regular';
+  font-size: 1rem;
+}
+
+input:focus {
+  border: .0625rem solid rgba(0, 0, 0, .8);
+  color: rgba(0, 0, 0, .8);
+}
+
 .wrapper {
   padding: 3rem 1rem 0 1rem;
 }
@@ -171,14 +187,7 @@ p {
 }
 
 .icons-list-search-input {
-  height: 2.5rem;
-  width: 100%;
   max-width: 20rem;
-  padding: 0 .5rem;
-  border: .0625rem solid rgba(0, 0, 0, .32);
-  border-radius: .5rem;
-  color: rgba(0,0,0,.56);
-  font-size: 1rem;
 }
 
 .icons-list-summary {
