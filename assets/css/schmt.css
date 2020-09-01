@@ -187,7 +187,7 @@ input:focus {
 }
 
 .icons-list-search-input {
-  max-width: 20rem;
+  max-width: 22.5rem;
 }
 
 .icons-list-summary {
@@ -225,9 +225,9 @@ input:focus {
 
 .icons-list-card-label {
   margin-left: 1rem;
-  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .label {
@@ -250,6 +250,25 @@ input:focus {
   font-feature-settings: 'liga';
 }
 
+.toast-list {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.toast {
+  display: block;
+  padding: 1rem;
+  width: 100%;
+  max-width: 25rem;
+  border-radius: .5rem;
+  margin-bottom: 1rem;
+  background-color: rgba(0, 0, 0, .8);
+  color: #FFFFFF;
+}
+
 @media only screen and (min-width: 600px) {
   .wrapper {
     padding: 3rem 2rem 0 2rem;
@@ -259,6 +278,10 @@ input:focus {
 @media only screen and (min-width: 1024px) {
   h1 {
     font-size: 2.75rem;
+  }
+
+  .toast-list {
+    bottom: 2rem;
   }
 }
 

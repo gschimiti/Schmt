@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8"/>
-    <title>schmt.me - Material Icons Cheatsheet</title>
+    <title>Material Icons Cheatsheet - schmt.me</title>
     <link type="text/css" rel="stylesheet" href="../../assets/css/schmt.css"  media="screen,projection"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
@@ -19,7 +19,11 @@
 
     <main class="page-content">
       <div class="icons-list-search">
-        <label for="icons-list-search-input" class="icons-list-search-label">Icon Name <span class="icons-list-search-hint">Enter some text to filter icons by name</span></label>
+        <label for="icons-list-search-input" class="icons-list-search-label">
+          Icon Name
+          <span class="icons-list-search-hint">Enter some text to filter icons by name</span>
+        </label>
+
         <input id="icons-list-search-input" class="icons-list-search-input" type="search"/>
       </div>
 
@@ -30,6 +34,26 @@
 
     <script type="text/javascript" src="../../assets/json/material-icons.json"></script>
     <script>
+      function showToastNotification(iconName) {
+        let toastList = document.querySelector('#toast-list');
+
+        if (!toastList) {
+          toastList = document.createElement('div');
+
+          toastList.setAttribute('id', 'toast-list');
+          toastList.setAttribute('class', 'toast-list');
+          document.body.appendChild(toastList);
+        }
+
+        let toast = document.createElement('span');
+
+        toast.textContent = iconName + ' copied to clipboard';
+        toast.setAttribute('class', 'toast');
+
+        toastList.appendChild(toast);
+        setTimeout(function () { toastList.removeChild(toast) }, 4000);
+      }
+
       function copyToClipboard(content) {
         let textArea = document.createElement('textarea');
 
@@ -111,6 +135,7 @@
           let iconName = e.target.innerText.split('\n', 1)[0];
 
           copyToClipboard(iconName);
+          showToastNotification(iconName);
         }
       });
 
