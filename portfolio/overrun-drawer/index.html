@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Overrun Drawer - schmt.me</title>
+  <link type="text/css" rel="stylesheet" href="../../assets/css/overrun-drawer.css" media="screen, projection"/>
+  <!--meta name="viewport" content="width=device-width, initial-scale=1.0"/-->
+</head>
+
+<body>
+  <main class="overrun-main-container">
+    <img class="overrun-logo" src="../../assets/img/overrun__logo.svg"/>
+
+    <h1 class="overrun-page-title">Jogadores</h1>
+
+    <div id="players" class="overrun-players">
+      <div class="overrun-players-input">
+        <input id="player-name" class="overrun-players-input-field" type="text" placeholder="Digite o nome do jogador"/>
+
+        <button class="overrun-add-button" title="Adicionar jogador">
+          <i class="overrun-add-button-icon"></i>
+        </button>
+      </div>
+
+      <hr class="overrun-players-divider">
+
+      <ul id="players-list" class="overrun-players-list">
+        <li class="overrun-players-list-item is-empty">
+          <span>Nenhum jogador adicionado</span>
+        </li>
+      </ul>
+
+      <div id="list-action-buttons" class="overrun-list-action-buttons is-hidden">
+        <button class="overrun-list-action-button clear-button" title="Remover todos os jogadores">Limpar</button>
+        <button class="overrun-list-action-button drawing-button" title="Iniciar sorteio">Sortear</button>
+      </div>
+    </div>
+
+    <div id="drawings" class="overrun-drawings is-hidden">
+      <svg id="loading-animation" class="overrun-drawings-animation" height="64" width="64">
+        <circle cx="32" cy="32" r="28" stroke="#A00C10" stroke-width="6" fill="none"/>
+      </svg>
+
+      <p class="overrun-drawings-action-text is-hidden">Deseja sortear mais uma vez?</p>
+
+      <div id="drawings-action-buttons" class="overrun-drawings-action-buttons is-hidden">
+        <button class="overrun-drawings-action-button finish-button" title="Finalizar sorteio">Encerrar</button>
+        <button class="overrun-drawings-action-button draw-button" title="Sortear mais um nome">Sortear</button>
+      </div>
+    </div>
+  </main>
+
+  <footer class="overrun-footer">
+    <span>© 2020 Overrun. Todos os direitos reservados.</span>
+  </footer>
+
+  <div id="overlay" class="overrun-modal-overlay is-hidden"></div>
+
+  <script type="text/javascript" src="../../assets/js/overrun-drawer.js"></script>
+</body>
+</html>
