@@ -1,6 +1,15 @@
 let players = [];
 let drawings = [];
 
+window.onload = function() {
+  'use strict';
+
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker
+             .register('./overrun-sw.js');
+  }
+};
+
 function insertPlayer(playerName) {
   let playersList = document.querySelector('#players-list');
   let playersListItem = document.createElement('li');
