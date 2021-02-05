@@ -1,9 +1,9 @@
 var cacheName = 'overrun-drawer-cache';
 var filesToCache = [
-  '/',
-  './index.html',
-  './css/overrun-drawer.css',
-  './js/overrun-drawer.js'
+  './overrun-drawer/',
+  './overrun-drawer/index.html',
+  './overrun-drawer/css/overrun-drawer.css',
+  './overrun-drawer/js/overrun-drawer.js'
 ];
 
 self.addEventListener('install', function(e) {
