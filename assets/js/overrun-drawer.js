@@ -6,7 +6,7 @@ window.onload = function() {
 
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker
-             .register('./overrun-sw.js');
+             .register('../../assets/js/overrun-sw.js');
   }
 };
 
