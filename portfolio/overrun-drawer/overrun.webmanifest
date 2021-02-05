@@ -1,0 +1,15 @@
+{
+  "name": "Overrun Sorteios",
+  "short_name": "Sorteios",
+  "description": "Sorteador de nomes da Overrun Geek Store",
+  "icons": [
+    {
+      "src": "../img/overrun__logo__32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "https://www.schmt.me/portfolio/overrun-drawer/",
+  "display": "fullscreen",
+  "background_color": "#FFFFFF"
+}
