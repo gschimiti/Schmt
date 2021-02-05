@@ -6,7 +6,7 @@ window.onload = function() {
 
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker
-             .register('https://www.schmt.me/assets/js/overrun-sw.js');
+             .register('https://www.schmt.me/assets/js/overrun-sw.js', { scope: 'https://www.schmt.me' });
   }
 };
 
